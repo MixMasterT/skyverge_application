@@ -43,7 +43,7 @@ navigation a:last-child {
   border-right: none;
 }
 
-main {
+main, table thead {
   margin: 3em auto;
   background-color: rgb(0, 93, 171);
   color: white;
