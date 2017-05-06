@@ -2,24 +2,48 @@ body {
   font-family: 'Bitter';
 }
 
+a {
+  color: #FFA;
+}
+
+a:hover {
+  color: #CC8;
+  text-decoration: none;
+}
+
+h2, h3 {
+  margin-top: 1em;
+}
+
 .top-bar {
   padding-top: 2em;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
+.top-bar img {
+  margin-bottom: 1em;
+  width: 12em;
+  height: auto;
+}
+
 navigation {
+  /*margin-top: 1em;*/
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
   align-items: center;
   border: 1px solid #AAA;
-  min-width: 415px;
+  min-width: 550px;
 }
 
-navigation a {
+navigation li {
+  padding: 1em 0;
   text-align: center;
+  text-decoration: none;
+  cursor: pointer;
   border-right: 1px solid #AAA;
   display: flex;
   margin: 0 auto;
@@ -30,16 +54,24 @@ navigation a {
   min-width: 6em;
 }
 
-navigation a:hover {
+navigation li:hover {
   color: #000;
   text-decoration: none;
 }
 
-navigation a:first-child {
-  padding-right: 1em;
+.selected {
+  color: #000;
 }
 
-navigation a:last-child {
+.table-link {
+  color: rgb(50, 143, 221)
+}
+
+q, blockquote {
+  margin-top: 0.8em;
+}
+
+navigation li:last-child {
   border-right: none;
 }
 
@@ -66,4 +98,36 @@ article {
 
 .table > th, .table > td {
   padding-left: 3em;
+}
+
+main {
+  position: relative;
+}
+
+.visible {
+  /*position: absolute;*/
+  transition: all 0.7s ease;
+}
+
+.hidden {
+  opacity: 0;
+  position: absolute;
+  right: -10000px;
+  top: 0;
+}
+ol, dl {
+  margin-top: 2em;
+}
+
+ol li {
+  margin-top: 1em;
+}
+
+dt {
+  margin-top: 1em;
+  color: #AAA;
+  font-size: 1.2em;
+}
+dd {
+  margin-top: 0.5em;
 }

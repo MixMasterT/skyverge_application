@@ -9,6 +9,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
     <link href="skyverge.css" rel="stylesheet">
+
+    <script>
+      $(document).ready(function() {
+        $('navigation li').click(function(e) {
+          e.preventDefault();
+          $('navigation li').removeClass('selected');
+          $(this).addClass('selected');
+          $("article").addClass('hidden').removeClass('visible');
+          var section = $(this).data('target');
+          $('#' + section).addClass('visible').removeClass('hidden');
+        })
+
+      });
+
+    </script>
   </head>
   <body>
     <div class='container'>
@@ -17,17 +32,18 @@
         <img class='col-md-4' src='images/skyverge-logo.png' alt='skyverge logo' />
         <div class='col-md-1'></div>
         <navigation class='col-md-6'>
-          <a href="#contact">Contact</a>
-          <a href="#fit">Why Me</a>
-          <a href="#pre-sales">Pre-Sales</a>
-          <a href="#fire-alarm">Fire Alarm</a>
+          <li href="#" data-target='contact'>Contact</li>
+          <li href="#" data-target='fit'>Why Me</li>
+          <li href="#" data-target='pre-sales'>Pre-Sales</li>
+          <li href="#" data-target='fire-alarm'>Fire Alarm</li>
+          <li href="#" data-target='last-purchase'>Last Purchase</li>
         </navigation>
         <div class='col-md-1'></div>
       </div>
 
       <main>
 
-        <article id='start'>
+        <article id='start' class='visible'>
           <h2>Torah Oglander</h2>
           <h3>Candidate for<br />Customer Support Specialist</h3>
         </article>
@@ -63,7 +79,21 @@
                   </tr>
                   <tr>
                     <td>Email</td>
-                    <td><a href='https://mixmastert.github.io/#contact'>click here to send email</a></td>
+                    <td>
+                      <a class='table-link'
+                        href='https://mixmastert.github.io/#contact'>
+                        click here to send email
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Online Portfolio</td>
+                    <td>
+                      <a class='table-link'
+                        href='https://MixMasterT.github.io'>
+                        portfolio link
+                      </a>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -93,7 +123,7 @@
 
             <dl class='dl-vertical col-md-10'>
               <dt>Why are you looking?</dt>
-              <dd>I have acquired new skills and I want to use them</dd>
+              <dd>I have acquired new skills and I want to use them.</dd>
               <dt>Can you summarize your remote work experience?</dt>
               <dd>In graduate school I worked as an academic editor and
                 and translator. This work was remote because I did
@@ -111,9 +141,11 @@
                 and outreach to Chinese customers.
               </dd>
               <dt>Can you summarize your HTML/CSS/JavasScript knowledge?</dt>
-              <dd>I have been messing with web pages and CSS for at least
+              <dd>I have been building webpages with HTML and CSS for at least
                 five years. I understand the big picture of how these technologies
-                fit together and change over time. Here are a few more specifics:
+                fit together and change over time. More recently, I have
+                become interested in software engineering. Here are a few
+                basic principles that show some understanding:
                 <ul>
                   <li>The <a href='https://www.w3.org/'>W3C</a> is the authority on web standards</li>
                   <li><a href='https://www.w3.org/'>Mozilla</a> actively develops the JavaScript language</li>
@@ -123,21 +155,70 @@
                   </li>
                 </ul>
               </dd>
+              <dt>Why are you a good fit for this role?</dt>
+              <dd>I am very patient and good natured. I am also careful with words
+                and skillful at communication, both verbally and in writing. Furthermore,
+                I have good general technical knowledge relating to the topics that
+                most Woocommerce customers will be interested in.
+              </dd>
               <dt>Anything else we should know?</dt>
               <dd>I love music. I play capoeira. I am a DJ.</dd>
             </dl>
 
             <div class='col-md-1'></div>
+          </div>
 
-          </div>
-          <div class="row">
-          </div>
         </article>
 
         <article id="pre-sales" class='hidden'>
+          <h2>How would you respond to this?</h2>
+          <q>I’m considering switching to Product Customizer.
+            Does your app allow live image previews?
+          </q>
+          <h3>Possible response from me:</h3>
+          <blockquote>
+            <p>Dear Customer,<br /><br />
+              Thanks for reaching out. We appreciate your feedback regarding
+              features that you consider desireable. As yet, we have not implemented
+              live image previews. However, we do have nice imaging features built-in
+              to our platform. You can learn more about our dynamic, controllable,
+              360&deg; image rotation feature <a href='https://woocommerce.com/products/woocommerce-360-image/'>here</a>.
+              I will be sure to let our development team know that you are interested in
+              live image previews, and I will let you know what I hear back from them.
+              Please let me know if there is anything else I can do.<br />
+              Best Regards,<br /><br />
+              <cite>Torah Oglander</cite>
+            </p>
+          </blockquote>
         </article>
 
-        <article id="fire-alarms" class='hidden'>
+        <article id="fire-alarm" class='hidden'>
+          <h2>You login to work and see many distraught emails from customer. What do you do?</h2>
+            <ol>
+              <li>Read a sampling of the messages to get a sense of what is happening.</li>
+              <li>Check in with coworkers to find out what they know. Inform them of the problem if they don't already know.</li>
+              <li>Post an informative message on the help desk on the WooCommerce site.</li>
+              <li>Craft a reassuring response to the emails that I have received with a link to the message on the help desk.</li>
+              <li>Go through the emails, marking the ones that relate to the fire-alarm topic for a batch send, and marking any emails related to other topics for attention after the fire-alarm message is sent.</li>
+              <li>Batch send a message to all those emails related to the fire-alarm issue (use BCC to avoid revealing everyone's email addresses).</li>
+              <li>Rspond to any emails related other topics, and take care of my other work responsibilities.</li>
+              <li>Maintain contact with tech team and offer to help in any way I can.</li>
+              <li>Update the help desk link and send follow-up email as soon as new information becomes available.</li>
+            </ol>
+        </article>
+
+        <article id="last-purchase" class='hidden'>
+          <h2>What was your last online purchase? What steps did you take in that process?<h2>
+            <h3>The last thing I bought online was three roundtrip airplane tickets</h3>
+            <ol>
+              <li>I checked pricing through several carriers and aggregator websites to get a general sense of what was available.</li>
+              <li>I noted which carriers were offering direct-flight service between my destinations and the approximate prices for tickets with each one.</li>
+              <li>I checked the baggage cost policies for the airlines offering direct-flight service along my desired route.</li>
+              <li>I recognized that two free bags would be worth over one-hundred dollars per round-trip since we will have lots of luggage, and that this benefit made one carrier (Southwest) much more cost-effective than the others.</li>
+              <li>I then checked the listing for sale-fares on Southwest, and noticed that one of the airports in my vicinity had a discounted direct-flight fare to my destingation.</li>
+              <li>I then reserved the tickets.</li>
+              <li>Before finalizing the purchase, I confirmed the itinerary with my travel partners.</li>
+            </ol>
         </article>
 
       </main>
