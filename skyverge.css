@@ -131,3 +131,13 @@ dt {
 dd {
   margin-top: 0.5em;
 }
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+footer a {
+  color: #333;
+  font-size: 2em;
+  padding-bottom: 1em;
+}
